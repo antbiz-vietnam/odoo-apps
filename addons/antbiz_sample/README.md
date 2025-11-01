@@ -1,7 +1,7 @@
 # 💬 Telegram Chat Integration for Odoo
 
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
-![Odoo](https://img.shields.io/badge/Odoo-16.0%20|%2017.0%20|%2018.0-success)
+![Odoo](https://img.shields.io/badge/Odoo-18.0-success)
 ![Category](https://img.shields.io/badge/Category-Communication%2FChat-blue)
 ![Status](https://img.shields.io/badge/Status-Stable-green)
 
