@@ -1,0 +1,37 @@
+version: "3.1"
+services:
+  web:
+    image: odoo:latest
+    depends_on:
+      - db
+    ports:
+      - "8010:8069"
+      - "8072:8072"
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=myodoo
+      - EXTRA_ADDONS=/extra-addons
+      # - DOMAIN=localhost:8010
+      - VNPAY_CREATE_ORDER_ENDPOINT=sandbox.vnpayment.vn/paymentv2/vpcpay.html
+    # networks:
+    #   - internal-net
+    volumes:
+      - odoo-data:/app/odoo/data # Mount persistent volume
+      - odoo-filestore:/var/lib/odoo
+      # - ../addons:/mnt/extra-addons
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=myodoo
+      - POSTGRES_USER=odoo
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data # Persistent volume for PostgreSQL
+
+volumes:
+  odoo-data:
+  postgres-data:
+  odoo-filestore:
