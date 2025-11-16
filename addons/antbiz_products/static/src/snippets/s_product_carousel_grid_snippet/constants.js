@@ -1,0 +1,3 @@
+export const DEFAULT_NUMBER_OF_COL = 4;
+export const DEFAULT_NUMBER_OF_COL_SM = 1;
+export const DEFAULT_NUMBER_OF_ROW_PER_SLIDE = 1;

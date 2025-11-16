@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="snippets" inherit_id="website.snippets" name="Devque Product Grid Snippets">
+    <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+      <t t-snippet="antbiz_products.s_product_carousel_grid_snippet" string="Products Carousel Grid" group="products"/>
+    </xpath>
+  </template>
+  <template id="s_product_carousel_grid_snippet_options" inherit_id="website.snippet_options">
+    <xpath expr="." position="inside">
+      <t t-call="website.dynamic_snippet_carousel_options_template">
+        <t t-set="snippet_name" t-value="'product_carousel_grid_snippet'"/>
+        <t t-set="snippet_selector" t-value="'.s_product_carousel_grid_snippet'"/>
+      </t>
+    </xpath>
+  </template>
+  <template id="s_product_carousel_grid_snippet_template_options" inherit_id="website.s_dynamic_snippet_options_template">
+    <xpath expr="//we-select[@data-name='filter_opt']" position="after">
+      <t t-if="snippet_name == 'product_carousel_grid_snippet'">
+        <we-select string="Category" data-name="product_category_opt" data-attribute-name="productCategoryId" data-no-preview="true">
+          <we-button data-select-data-attribute="all">All Products</we-button>
+          <we-button data-select-data-attribute="current">Current Category or All</we-button>
+        </we-select>
+        <we-many2many string="Tags" data-name="product_tag_opt" data-attribute-name="productTagIds" data-no-preview="true" data-model="product.tag" data-allow-delete="true" data-fakem2m="true" data-select-data-attribute=""/>
+        <we-checkbox string="Show variants" data-select-data-attribute="true" data-attribute-name="showVariants" data-no-preview="true"/>
+        <we-input string="Product Names" class="o_we_large" data-name="product_names_opt" data-attribute-name="productNames" data-no-preview="true" data-select-data-attribute="" placeholder="e.g. lamp,bin" title="Comma-separated list of parts of product names, barcodes or internal reference"/>
+      </t>
+    </xpath>
+  </template>
+  <!-- Slider config -->
+  <template id="s_product_carousel_grid_snippet_carousel_template_options" inherit_id="website.dynamic_snippet_carousel_options_template">
+    <xpath expr="//we-input[@data-name='speed_opt']" position="after">
+      <t t-if="snippet_name == 'product_carousel_grid_snippet'">
+        <we-input string="Slider Row (Desktop)" data-select-data-attribute="1" data-name="num_of_row" data-attribute-name="rowPerSlide" data-no-preview="true" data-unit="" data-save-unit="" data-step="1" title="Number of row to show in the slider on desktop"/>
+        <we-input string="Slider Row (Mobile)" data-select-data-attribute="1" data-name="num_of_row_sm" data-attribute-name="rowPerSlideSm" data-no-preview="true" data-unit="" data-save-unit="" data-step="1" title="Number of row to show in the slider on mobile"/>
+        <we-input string="Slider Col (Desktop)" data-select-data-attribute="1" data-name="num_of_el" data-attribute-name="numOfEl" data-no-preview="true" data-unit="" data-save-unit="" data-step="1" title="Number of elements to show in the slider on desktop"/>
+        <we-input string="Slider Col Sm (Mobile)" data-select-data-attribute="1" data-name="num_of_elsm" data-attribute-name="numOfElSm" data-no-preview="true" data-unit="" data-save-unit="" data-step="1" title="Number of elements to show in the slider on mobile"/>
+      </t>
+    </xpath>
+  </template>
+</odoo>
