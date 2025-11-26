@@ -52,13 +52,11 @@ Antbiz Vietnam – https://antbiz.vn
     # Pricing (Mandatory for Odoo Store)
     'price': 5.00,
     'currency': 'USD',
-   'depends': ['base', 'website_sale', 'website'],
+    'depends': ['base', 'website_sale', 'website'],
+    'icon': 'static/description/icon.png',
     'data': [
         # Security
         'security/ir.model.access.csv',
-
-        # Data
-        'data/product_snippet_template.xml',
 
         # Snippets
         'views/snippets/product_carousel_grid_snippet/options.xml',
