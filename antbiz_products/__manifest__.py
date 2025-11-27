@@ -63,6 +63,10 @@ Antbiz Vietnam – https://antbiz.vn
         'views/snippets/product_carousel_grid_snippet/preview.xml',
         'views/snippets/product_carousel_grid_snippet/snippet.xml',
     ],
+    'images': [
+        'static/description/description.png',
+        'static/description/screenshot.png',
+    ],
     'assets': {
        'web.assets_frontend': [
             'antbiz_products/static/src/snippets/s_product_carousel_grid_snippet/000.scss',
